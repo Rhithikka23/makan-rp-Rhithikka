@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Makan@RP</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <div class="logo">
+            <span class="brand">Makan@RP</span>
+            <span class="subtitle">AI-powered campus food platform</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="about.html">About us</a>
+            <a href="docs.html">Docs</a>
+            <a href="chat.html">Chat</a>
+            <a href="contact.html" class="contact-btn">Contact</a>
+        </div>
+    </div>
+
+    <!-- Contact card -->
+    <div class="container">
+        <div class="card">
+
+            <h1>Contact Us</h1>
+            <p class="description">
+                Have feedback or suggestions for <strong>food@rp</strong>?  
+                Reach out to the <strong>Makan@RP</strong> team — all fields are required.
+            </p>
+
+            <div class="content">
+
+                <!-- Left information -->
+                <div class="info">
+                    <h3>Project Information</h3>
+                    <p><strong>Platform:</strong> Makan@RP</p>
+                    <p><strong>Chatbot:</strong> food@rp</p>
+                    <p><strong>School:</strong> School of Infocomm, Republic Polytechnic</p>
+                    <p><strong>Email:</strong> student@myrp.edu.sg</p>
+                </div>
+
+                <!-- Right form -->
+                <div class="form">
+                    <form onsubmit="submitFeedback(); return false;">
+
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="student@rp.edu.sg" required>
+
+                        <label for="rating">Rating</label>
+                        <select id="rating" required>
+                            <option value="">Select rating</option>
+                            <option value="1">⭐ 1</option>
+                            <option value="2">⭐⭐ 2</option>
+                            <option value="3">⭐⭐⭐ 3</option>
+                            <option value="4">⭐⭐⭐⭐ 4</option>
+                            <option value="5">⭐⭐⭐⭐⭐ 5</option>
+                        </select>
+
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="How can we help?" required></textarea>
+
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Feedback display -->
+            <div class="feedback-section">
+                <h2>User Feedback</h2>
+                <div id="feedbackList"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function submitFeedback() {
+            var name = document.getElementById("name").value;
+            var rating = document.getElementById("rating").value;
+            var message = document.getElementById("message").value;
+
+            var stars = "";
+            for (var i = 0; i < rating; i++) {
+                stars += "⭐";
+            }
+
+            var feedback = document.createElement("div");
+            feedback.className = "feedback-item";
+            feedback.innerHTML =
+                "<strong>" + name + "</strong><br>" +
+                stars + "<br>" +
+                message;
+
+            document.getElementById("feedbackList").appendChild(feedback);
+
+            document.getElementById("name").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("message").value = "";
+            document.getElementById("rating").value = "";
+        }
+    </script>
+
+</body>
+</html>
