@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#FF6B35" opacity="0.1"/>
+  
+  <!-- Main plate/bowl shape -->
+  <ellipse cx="100" cy="100" rx="60" ry="55" fill="none" stroke="#FF6B35" stroke-width="3"/>
+  
+  <!-- Food fork on left -->
+  <line x1="60" y1="60" x2="60" y2="140" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="50" cy="65" r="3.5" fill="#FF6B35"/>
+  <circle cx="60" cy="65" r="3.5" fill="#FF6B35"/>
+  <circle cx="70" cy="65" r="3.5" fill="#FF6B35"/>
+  
+  <!-- Spoon on right -->
+  <path d="M 140 75 Q 140 55 155 55 Q 160 55 160 60 Q 160 70 150 75 L 140 140" fill="none" stroke="#FF6B35" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Rice/food dots in the middle -->
+  <circle cx="95" cy="95" r="2.5" fill="#FF6B35" opacity="0.7"/>
+  <circle cx="105" cy="95" r="2.5" fill="#FF6B35" opacity="0.7"/>
+  <circle cx="100" cy="105" r="2.5" fill="#FF6B35" opacity="0.7"/>
+  <circle cx="92" cy="110" r="2.5" fill="#FF6B35" opacity="0.7"/>
+  <circle cx="108" cy="108" r="2.5" fill="#FF6B35" opacity="0.7"/>
+  
+  <!-- AI circuit elements (subtle) -->
+  <circle cx="75" cy="75" r="4" fill="none" stroke="#4CAF50" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="125" cy="75" r="4" fill="none" stroke="#4CAF50" stroke-width="1.5" opacity="0.6"/>
+  <line x1="79" y1="75" x2="121" y2="75" stroke="#4CAF50" stroke-width="1" opacity="0.6"/>
+  
+  <!-- Text: Makan@RP -->
+  <text x="100" y="165" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#FF6B35">MAKAN@RP</text>
+  <text x="100" y="182" font-family="Arial, sans-serif" font-size="9" text-anchor="middle" fill="#4CAF50" letter-spacing="1">AI FOOD PLATFORM</text>
+</svg>
