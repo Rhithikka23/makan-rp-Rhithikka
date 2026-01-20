@@ -51,10 +51,28 @@
     <!-- Main container -->
     <div class="container">
         <div class="info-card">
-            <h1>Chat with Makan@RP Assistant</h1>
-            <p>
-                Ask about food options, canteens, or recommendations on campus.
-            </p>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h1>Chat with Makan@RP Assistant</h1>
+                    <p>
+                        Ask about food options, canteens, or recommendations on campus.
+                    </p>
+                </div>
+                <button id="newConversationBtn" style="
+                    padding: 10px 20px;
+                    background-color: #d16b3c;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 14px;
+                    font-weight: 600;
+                    height: fit-content;
+                    transition: background-color 0.3s ease;
+                ">
+                    New Conversation
+                </button>
+            </div>
 
             <!-- Botpress container -->
             <div id="webchat" style="width: 100%; height: 500px;"></div>
@@ -85,6 +103,45 @@
                 proactiveMessageEnabled: false,
                 footer: "[⚡ by Botpress](https://botpress.com/?from=webchat)"
             }
+        });
+
+        // Handle new conversation button
+        document.getElementById('newConversationBtn').addEventListener('click', function() {
+            // Reset the conversation with Botpress
+            window.botpress.sendEvent({
+                type: 'proactive_trigger',
+                channel: 'web',
+                payload: {
+                    text: 'reset'
+                }
+            });
+            
+            // Clear the webchat messages
+            const webchat = document.getElementById('webchat');
+            webchat.innerHTML = '';
+            
+            // Re-initialize the webchat
+            window.botpress.init({
+                botId: "12b2dac7-860c-4335-8549-6e919dbe5d21",
+                clientId: "73e22b9a-96f1-4620-83dc-4433a4b0e762",
+                selector: "#webchat",
+                configuration: {
+                    version: "v2",
+                    botName: "Makan@RP Assistant",
+                    color: "#d16b3c",
+                    variant: "solid",
+                    headerVariant: "glass",
+                    themeMode: "light",
+                    fontFamily: "inter",
+                    radius: 3,
+                    feedbackEnabled: false,
+                    soundEnabled: false,
+                    proactiveMessageEnabled: false,
+                    footer: "[⚡ by Botpress](https://botpress.com/?from=webchat)"
+                }
+            });
+            
+            window.botpress.open();
         });
     </script>
 
